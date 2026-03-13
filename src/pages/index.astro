@@ -4,18 +4,32 @@ import Layout from '../layouts/Layout.astro';
 import Slogan from '../layouts/slogan.astro';
 import Hero from '../layouts/hero.astro';
 import Photos from '../layouts/photos.astro';
-import Creators from '../layouts/creators.astro';
-import Details from '../layouts/details.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Crew from '../layouts/crew.astro';
 ---
 
 <Layout>
-	<Banner />
-	<Slogan />
-	<Hero />
-	<Photos />	
-	<Creators />
-	<Details />
+  <Banner />
+
+  <section id="slogan">
+    <Slogan />
+  </section>
+
+  <section id="diary">
+    <Hero />
+  </section>
+
+  <section id="galerie">
+    <Photos />
+  </section>
+
+  <section id="crew">
+    <Crew />
+  </section>
+
 </Layout>
+
+<style>
+  section[id] {
+    scroll-margin-top: 100px;
+  }
+</style>

@@ -1,22 +1,13 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Trailer & Gallery — Preview</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Share+Tech+Mono&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet"/>
+---
+// photos.astro — Trailer & Gallery sections
+// Sin <!DOCTYPE>, <html>, <head> ni <body> — eso lo maneja Layout.astro
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet" />
+
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    min-height: 100vh;
-    background:
-      radial-gradient(circle at 20% 30%, rgba(255,105,180,0.35) 0%, transparent 35%),
-      radial-gradient(circle at 80% 20%, rgba(255,20,147,0.25)  0%, transparent 30%),
-      radial-gradient(circle at 60% 70%, rgba(255,177,209,0.15) 0%, transparent 40%),
-      radial-gradient(circle at 10% 80%, rgba(139,0,0,0.35)     0%, transparent 30%),
-      linear-gradient(135deg, #1a0010 0%, #2d0020 30%, #12000d 60%, #0a0007 100%);
-  }
 
   :root {
     --pink-hot:    #FF69B4;
@@ -29,10 +20,7 @@
     --tv-body:     #F472B6;
     --tv-dark:     #9D174D;
     --tv-screen:   #0d0010;
-    --font-caption: 'Permanent Marker', cursive;
-    --font-hud:     'Share Tech Mono', monospace;
-    --font-pixel:   'Press Start 2P', monospace;
-    --font-vt323:   'VT323', monospace;
+    --font:        'Rubik Bubbles', cursive;
   }
 
   .trailer-section, .gallery-section {
@@ -41,73 +29,33 @@
     display: flex; flex-direction: column; align-items: center; gap: 2.5rem;
   }
 
-  .section-title {
-    font-family: var(--font-pixel);
-    font-size: clamp(2rem, 1.5vw, 0.85rem);
-    color: var(--pink-hot); 
-    letter-spacing: 0.25em;
-    text-shadow: 0 0 10px var(--pink-neon), 0 0 24px rgba(255,20,147,0.4);
-    display: flex; 
-    align-items: center; 
-    gap: 1rem;
-    margin-bottom: 3rem;
-  }
+  .section-title { font-family: var(--font); font-size: clamp(1.6rem,4vw,2.8rem); font-weight: normal; color: var(--pink-hot); letter-spacing: 0.15em; text-shadow: 0 0 10px var(--pink-neon), 0 0 24px rgba(255,20,147,0.4); display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem; }
   .title-deco { animation: star-pulse 2s ease-in-out infinite alternate; display: inline-block; }
 
-  /* TV */
   .tv-wrap { position: relative; display: flex; flex-direction: column; align-items: center; gap: 1rem; width: 100%; max-width: 960px; }
 
-  .tv-sticker {
-    position: absolute;
-    width: 40px;        
-    height: 40px;
-    z-index: 10;
-    pointer-events: none;
-    filter: drop-shadow(0 1px 3px rgba(255,105,180,0.6));
-    animation: sticker-float 3s ease-in-out infinite;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .tv-sticker img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;   /* ← contain para que no se recorte */
-    border-radius: 4px;
-    display: block;
-  }
-  .tv-sticker--tl { top: -0.75rem; left: 2rem;  animation-delay: 0s; }
-  .tv-sticker--tr { top: -0.75rem; right: 2rem; animation-delay: 0.5s; }
-  .tv-sticker--bl { bottom: 3.5rem; left: -3rem; animation-delay: 1s; }
+  .tv-sticker { position: absolute; width: 40px; height: 40px; z-index: 10; pointer-events: none; filter: drop-shadow(0 1px 3px rgba(255,105,180,0.6)); animation: sticker-float 3s ease-in-out infinite; display: flex; align-items: center; justify-content: center; }
+  .tv-sticker img { width: 100%; height: 100%; object-fit: contain; border-radius: 4px; display: block; }
+  .tv-sticker--tl { top: -0.75rem; left: 2rem;   animation-delay: 0s; }
+  .tv-sticker--tr { top: -0.75rem; right: 2rem;  animation-delay: 0.5s; }
+  .tv-sticker--bl { bottom: 3.5rem; left: -3rem;  animation-delay: 1s; }
   .tv-sticker--br { bottom: 3.5rem; right: -1rem; animation-delay: 1.4s; }
   .tv-sticker--ml { top: 45%; left: -3rem;  animation-delay: 0.7s; }
   .tv-sticker--mr { top: 35%; right: -3rem; animation-delay: 1.8s; }
 
-  .tv-body {
-    width: 100%;
-    background: linear-gradient(145deg, #F9A8D4 0%, var(--tv-body) 40%, #EC4899 70%, var(--tv-dark) 100%);
-    border-radius: 28px 28px 20px 20px;
-    padding: 1.5rem 1.5rem 1rem;
-    box-shadow: 0 0 0 3px rgba(255,255,255,0.35), 0 0 0 6px rgba(255,20,147,0.3), 8px 12px 40px rgba(0,0,0,0.6), 0 0 60px rgba(255,105,180,0.2), inset 0 2px 0 rgba(255,255,255,0.4), inset 0 -2px 0 rgba(0,0,0,0.2);
-    position: relative;
-  }
+  .tv-body { width: 100%; background: linear-gradient(145deg, #F9A8D4 0%, var(--tv-body) 40%, #EC4899 70%, var(--tv-dark) 100%); border-radius: 28px 28px 20px 20px; padding: 1.5rem 1.5rem 1rem; box-shadow: 0 0 0 3px rgba(255,255,255,0.35), 0 0 0 6px rgba(255,20,147,0.3), 8px 12px 40px rgba(0,0,0,0.6), 0 0 60px rgba(255,105,180,0.2), inset 0 2px 0 rgba(255,255,255,0.4), inset 0 -2px 0 rgba(0,0,0,0.2); position: relative; }
 
   .tv-antenna { position: absolute; top: -3.2rem; left: 50%; transform: translateX(-50%); width: 120px; height: 50px; display: flex; justify-content: space-between; align-items: flex-end; }
   .tv-antenna-l, .tv-antenna-r { width: 4px; height: 50px; background: linear-gradient(to top, var(--tv-dark), #F9A8D4); border-radius: 2px; box-shadow: 0 0 6px rgba(255,105,180,0.4); }
   .tv-antenna-l { transform: rotate(-20deg); transform-origin: bottom center; }
   .tv-antenna-r { transform: rotate(20deg);  transform-origin: bottom center; }
 
-  .tv-screen-wrap {
-    position: relative; background: var(--tv-screen); border-radius: 12px; overflow: hidden;
-    aspect-ratio: 16/9;
-    box-shadow: inset 0 0 30px rgba(0,0,0,0.8), inset 0 0 8px rgba(255,105,180,0.15), 0 0 20px rgba(0,0,0,0.5);
-    border: 3px solid rgba(0,0,0,0.5);
-  }
-  .tv-scanlines { position: absolute; inset: 0; z-index: 3; pointer-events: none; border-radius: 10px; background: repeating-linear-gradient(to bottom, transparent 0px, transparent 2px, rgba(0,0,0,0.12) 2px, rgba(0,0,0,0.12) 3px); }
-  .tv-curvature { position: absolute; inset: 0; z-index: 4; pointer-events: none; border-radius: 10px; background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.45) 100%); }
+  .tv-screen-wrap { position: relative; background: var(--tv-screen); border-radius: 12px; overflow: hidden; aspect-ratio: 16/9; box-shadow: inset 0 0 30px rgba(0,0,0,0.8), inset 0 0 8px rgba(255,105,180,0.15), 0 0 20px rgba(0,0,0,0.5); border: 3px solid rgba(0,0,0,0.5); }
+  .tv-scanlines  { position: absolute; inset: 0; z-index: 3; pointer-events: none; border-radius: 10px; background: repeating-linear-gradient(to bottom, transparent 0px, transparent 2px, rgba(0,0,0,0.12) 2px, rgba(0,0,0,0.12) 3px); }
+  .tv-curvature  { position: absolute; inset: 0; z-index: 4; pointer-events: none; border-radius: 10px; background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.45) 100%); }
   .tv-reflection { position: absolute; top: 5%; left: 5%; z-index: 5; pointer-events: none; width: 30%; height: 20%; background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 100%); border-radius: 50%; filter: blur(4px); }
 
-  .tv-hud-tl, .tv-hud-tr, .tv-hud-bl, .tv-hud-br { position: absolute; z-index: 6; pointer-events: none; font-family: var(--font-hud); font-size: clamp(0.45rem,1vw,0.6rem); color: rgba(255,210,230,0.75); text-shadow: 0 0 6px rgba(255,105,180,0.6); display: flex; gap: 0.4rem; }
+  .tv-hud-tl, .tv-hud-tr, .tv-hud-bl, .tv-hud-br { position: absolute; z-index: 6; pointer-events: none; font-family: var(--font); font-size: clamp(0.5rem,1vw,0.7rem); color: rgba(255,210,230,0.75); text-shadow: 0 0 6px rgba(255,105,180,0.6); display: flex; gap: 0.4rem; }
   .tv-hud-tl { top: 0.5rem; left: 0.6rem; }
   .tv-hud-tr { top: 0.5rem; right: 0.6rem; align-items: center; gap: 0.25rem; }
   .tv-hud-bl { bottom: 0.5rem; left: 0.6rem; }
@@ -118,8 +66,8 @@
   .tv-iframe { width: 100%; height: 100%; border: none; display: block; }
 
   .play-btn { position: absolute; inset: 0; z-index: 7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; background: rgba(10,0,7,0.55); backdrop-filter: blur(3px); border: none; cursor: pointer; transition: opacity 0.4s ease; }
-  .play-heart { font-size: clamp(3rem,8vw,5rem); color: var(--pink-neon); animation: heart-pulse 1.4s ease-in-out infinite; display: block; line-height: 1; text-shadow: none; }
-  .play-label { font-family: var(--font-pixel); font-size: clamp(0.45rem,1.2vw,0.65rem); color: var(--pink-pastel); letter-spacing: 0.2em; text-shadow: 0 0 8px var(--pink-neon); }
+  .play-heart { font-size: clamp(3rem,8vw,5rem); color: var(--pink-neon); animation: heart-pulse 1.4s ease-in-out infinite; display: block; line-height: 1; }
+  .play-label { font-family: var(--font); font-size: clamp(0.8rem,1.5vw,1.1rem); font-weight: normal; color: var(--pink-pastel); letter-spacing: 0.15em; text-shadow: 0 0 8px var(--pink-neon); }
 
   .tv-controls { display: flex; align-items: center; justify-content: flex-end; gap: 0.75rem; padding: 0.75rem 0.5rem 0; }
   .tv-knob { border-radius: 50%; background: radial-gradient(circle at 35% 35%, #FDE68A, var(--tv-dark)); box-shadow: 0 2px 4px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.3); }
@@ -128,10 +76,9 @@
   .tv-speaker { display: flex; flex-direction: column; gap: 3px; margin-right: auto; }
   .tv-speaker span { display: block; height: 2px; width: 28px; background: rgba(0,0,0,0.25); border-radius: 1px; }
 
-  .tv-warning { font-family: var(--font-vt323); font-size: clamp(0.85rem,2vw,1rem); color: var(--pink-pastel); text-align: center; letter-spacing: 0.06em; opacity: 0.7; line-height: 1.5; max-width: 520px; animation: horror-flicker 6s ease-in-out infinite; }
+  .tv-warning { font-family: var(--font); font-size: clamp(0.8rem,1.8vw,1rem); font-weight: normal; color: var(--pink-pastel); text-align: center; letter-spacing: 0.06em; opacity: 0.7; line-height: 1.5; max-width: 520px; animation: horror-flicker 6s ease-in-out infinite; }
   .warning-icon { color: var(--pink-neon); text-shadow: 0 0 6px var(--pink-neon); }
 
-  /* ── GALLERY ── */
   .photo-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; width: 100%; max-width: 960px; padding: 1rem; }
 
   .photo-card { position: relative; display: flex; flex-direction: column; align-items: center; gap: 0.6rem; cursor: pointer; transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1); }
@@ -143,47 +90,10 @@
   .photo-card--5 { transform: rotate(-2deg); }
   .photo-card--6 { transform: rotate(1deg); }
 
-  .photo-frame {
-    position: relative;
-    background: var(--white);
-    padding: 0.6rem 0.6rem 0;
-    box-shadow: 0 0 0 1px rgba(0,0,0,0.08), 4px 6px 20px rgba(0,0,0,0.5), 0 0 30px rgba(255,20,147,0.1);
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .photo-img {
-    position: relative;
-    aspect-ratio: 4/3;
-    overflow: hidden;
-    background: var(--deep);
-    flex-shrink: 0;
-  }
-
-  .photo-img .img-normal {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-    transition: opacity 0.05s steps(1);
-  }
-
-.photo-img .img-horror {
-  position: absolute;
-  top: 40%;
-  left: 35%;
-  transform: translate(-50%, -50%);
-  width: 30%;        
-  height: 30%;
-  object-fit: contain;
-  z-index: 2;
-  opacity: 0;
-  transition: opacity 0.05s steps(1);
-}
-
+  .photo-frame { position: relative; background: var(--white); padding: 0.6rem 0.6rem 0; box-shadow: 0 0 0 1px rgba(0,0,0,0.08), 4px 6px 20px rgba(0,0,0,0.5), 0 0 30px rgba(255,20,147,0.1); width: 100%; display: flex; flex-direction: column; }
+  .photo-img { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--deep); flex-shrink: 0; }
+  .photo-img .img-normal { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; transition: opacity 0.05s steps(1); }
+  .photo-img .img-horror { position: absolute; top: 40%; left: 35%; transform: translate(-50%,-50%); width: 30%; height: 30%; object-fit: contain; z-index: 2; opacity: 0; transition: opacity 0.05s steps(1); }
   .photo-img:hover .img-normal { opacity: 0; animation: glitch-swap 0.3s steps(1) forwards; }
   .photo-img:hover .img-horror  { opacity: 1; animation: glitch-reveal 0.3s steps(1) forwards; }
 
@@ -193,31 +103,22 @@
   .photo-card:hover .glitch-strip--1 { animation: glitch-strip-1 0.4s steps(1) infinite; }
   .photo-card:hover .glitch-strip--2 { animation: glitch-strip-2 0.4s steps(1) 0.05s infinite; }
 
-  .photo-meta { position: absolute; font-family: var(--font-hud); font-size: 0.38rem; color: rgba(255,255,255,0.9); text-shadow: 0 0 4px rgba(0,0,0,0.9); z-index: 6; letter-spacing: 0.05em; pointer-events: none; }
+  .photo-meta { position: absolute; font-family: var(--font); font-size: 0.45rem; color: rgba(255,255,255,0.9); text-shadow: 0 0 4px rgba(0,0,0,0.9); z-index: 6; letter-spacing: 0.03em; pointer-events: none; }
   .photo-meta--tl { top: 0.3rem; left: 0.3rem; }
   .photo-meta--tr { top: 0.3rem; right: 0.3rem; }
 
-  .photo-caption {
-    font-family: var(--font-caption);
-    font-size: clamp(0.7rem, 1.3vw, 0.88rem);
-    color: #2a0015;
-    text-align: center;
-    line-height: 1.3;
-    padding: 0.55rem 0.5rem 0.65rem;
-    width: 100%;
-    background: var(--white);
-  }
+  .photo-caption { font-family: var(--font); font-size: clamp(0.65rem,1.2vw,0.85rem); font-weight: normal; color: #2a0015; text-align: center; line-height: 1.3; padding: 0.55rem 0.5rem 0.65rem; width: 100%; background: var(--white); }
 
-  @media(max-width:768px){ .photo-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem;} .tv-sticker--ml,.tv-sticker--mr{display:none;} }
-  @media(max-width:480px){ .photo-grid{grid-template-columns:1fr 1fr;gap:1rem;padding:.5rem;} .photo-caption{font-size:.6rem;} }
+  @media(max-width:768px) { .photo-grid { grid-template-columns: repeat(2,1fr); gap: 1.5rem; } .tv-sticker--ml, .tv-sticker--mr { display: none; } }
+  @media(max-width:480px) { .photo-grid { grid-template-columns: 1fr 1fr; gap: 1rem; padding: .5rem; } .photo-caption { font-size: .6rem; } }
 
-  @keyframes heart-pulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.12);} }
-  @keyframes sticker-float { 0%,100%{transform:translateY(0px) rotate(0deg);} 50%{transform:translateY(-5px) rotate(3deg);} }
-  @keyframes star-pulse { from{transform:scale(1) rotate(-5deg);opacity:.8;} to{transform:scale(1.2) rotate(5deg);opacity:1;} }
-  @keyframes rec-blink { 0%,45%,100%{opacity:1;} 50%,95%{opacity:.1;} }
+  @keyframes heart-pulse    { 0%,100%{transform:scale(1);} 50%{transform:scale(1.12);} }
+  @keyframes sticker-float  { 0%,100%{transform:translateY(0px) rotate(0deg);} 50%{transform:translateY(-5px) rotate(3deg);} }
+  @keyframes star-pulse     { from{transform:scale(1) rotate(-5deg);opacity:.8;} to{transform:scale(1.2) rotate(5deg);opacity:1;} }
+  @keyframes rec-blink      { 0%,45%,100%{opacity:1;} 50%,95%{opacity:.1;} }
   @keyframes horror-flicker { 0%,92%,100%{opacity:.7;} 94%{opacity:.2;} 96%{opacity:.7;} 98%{opacity:.15;} }
-  @keyframes glitch-swap { 0%{clip-path:inset(0 0 100% 0);} 20%{clip-path:inset(30% 0 40% 0);transform:translateX(-4px);} 40%{clip-path:inset(60% 0 10% 0);transform:translateX(3px);} 60%{clip-path:inset(10% 0 70% 0);transform:translateX(-2px);} 100%{clip-path:inset(0 0 0 0);opacity:0;} }
-  @keyframes glitch-reveal { 0%{opacity:0;clip-path:inset(50% 0 50% 0);transform:translateX(5px);} 25%{opacity:1;clip-path:inset(20% 0 30% 0);transform:translateX(-3px);} 50%{clip-path:inset(0 0 60% 0);transform:translateX(2px);} 75%{clip-path:inset(40% 0 0 0);transform:translateX(-1px);} 100%{clip-path:inset(0 0 0 0);transform:translateX(0);} }
+  @keyframes glitch-swap    { 0%{clip-path:inset(0 0 100% 0);} 20%{clip-path:inset(30% 0 40% 0);transform:translateX(-4px);} 40%{clip-path:inset(60% 0 10% 0);transform:translateX(3px);} 60%{clip-path:inset(10% 0 70% 0);transform:translateX(-2px);} 100%{clip-path:inset(0 0 0 0);opacity:0;} }
+  @keyframes glitch-reveal  { 0%{opacity:0;clip-path:inset(50% 0 50% 0);transform:translateX(5px);} 25%{opacity:1;clip-path:inset(20% 0 30% 0);transform:translateX(-3px);} 50%{clip-path:inset(0 0 60% 0);transform:translateX(2px);} 75%{clip-path:inset(40% 0 0 0);transform:translateX(-1px);} 100%{clip-path:inset(0 0 0 0);transform:translateX(0);} }
   @keyframes glitch-strip-1 { 0%{top:20%;height:8px;transform:translateX(0);opacity:.8;} 25%{top:45%;height:12px;transform:translateX(-8px);opacity:.6;} 50%{top:10%;height:4px;transform:translateX(6px);opacity:.9;} 75%{top:70%;height:6px;transform:translateX(-4px);opacity:.5;} 100%{top:30%;height:8px;transform:translateX(0);opacity:.8;} }
   @keyframes glitch-strip-2 { 0%{top:65%;height:5px;transform:translateX(4px);opacity:.7;} 33%{top:25%;height:8px;transform:translateX(-6px);opacity:.5;} 66%{top:80%;height:3px;transform:translateX(3px);opacity:.8;} 100%{top:50%;height:5px;transform:translateX(-2px);opacity:.6;} }
 </style>
@@ -232,7 +133,7 @@
     <div class="tv-sticker tv-sticker--br"><img src="/icono4.png" alt=""></div>
     <div class="tv-sticker tv-sticker--ml"><img src="/icono5.png" alt=""></div>
     <div class="tv-sticker tv-sticker--mr"><img src="/icono6.png" alt=""></div>
-    
+
     <div class="tv-body">
       <div class="tv-antenna" aria-hidden="true"><div class="tv-antenna-l"></div><div class="tv-antenna-r"></div></div>
       <div class="tv-screen-wrap">
@@ -244,7 +145,7 @@
         <div class="tv-hud-bl">2004/10/31</div>
         <div class="tv-hud-br">23:47:03</div>
         <div class="tv-iframe-wrap" id="tv-player-wrap">
-          <iframe id="tv-iframe" class="tv-iframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ?enablejsapi=1&rel=0&modestbranding=1&color=white" title="Tráiler" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe id="tv-iframe" class="tv-iframe" src="coming-soon.mp4" title="Tráiler" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           <button class="play-btn" id="play-btn" aria-label="Reproducir">
             <span class="play-heart">♥</span>
             <span class="play-label">PLAY</span>
@@ -262,112 +163,32 @@
 </section>
 
 <!-- GALLERY SECTION -->
-<section class="gallery-section" id="gallery">
+<section class="gallery-section" id="galerie">
   <h2 class="section-title"><span class="title-deco">✦</span> GALERIE <span class="title-deco">✦</span></h2>
   <div class="photo-grid">
-
-    <!-- ── FOTO 1 ── -->
     <figure class="photo-card photo-card--1">
-      <div class="photo-frame">
-        <div class="photo-img">
-          <img class="img-normal" src="/doll'shouse.jpg" alt="My new doll's house">
-          <img class="img-horror"  src="/phantom-icon.png" alt="">
-          <div class="glitch-strip glitch-strip--1"></div>
-          <div class="glitch-strip glitch-strip--2"></div>
-          <div class="photo-meta photo-meta--tl">ISO 200 · f/4.0</div>
-          <div class="photo-meta photo-meta--tr">04/10/31</div>
-        </div>
-        <figcaption class="photo-caption">My new doll's house</figcaption>
-      </div>
+      <div class="photo-frame"><div class="photo-img"><img class="img-normal" src="/casa.png" alt="My new doll's house"><img class="img-horror" src="/phantom-icon.png" alt=""><div class="glitch-strip glitch-strip--1"></div><div class="glitch-strip glitch-strip--2"></div><div class="photo-meta photo-meta--tl">ISO 200 · f/4.0</div><div class="photo-meta photo-meta--tr">04/10/31</div></div><figcaption class="photo-caption">My new doll's house</figcaption></div>
     </figure>
-
-    <!-- ── FOTO 2 ── -->
-    <figure class="photo-card photo-card--2">
-      <div class="photo-frame">
-        <div class="photo-img">
-          <img class="img-normal" src="/family.jpg" alt="My family">
-          <img class="img-horror"  src="/skull-icon.png" alt="">
-          <div class="glitch-strip glitch-strip--1"></div>
-          <div class="glitch-strip glitch-strip--2"></div>
-          <div class="photo-meta photo-meta--tl">ISO 800 · f/2.8</div>
-          <div class="photo-meta photo-meta--tr">04/10/31</div>
-        </div>
-        <figcaption class="photo-caption">My family</figcaption>
-      </div>
-    </figure>
-
-    <!-- ── FOTO 3 ── -->
     <figure class="photo-card photo-card--3">
-      <div class="photo-frame">
-        <div class="photo-img">
-          <img class="img-normal" src="/Cristal.jpg" alt="My friend Cristal">
-          <img class="img-horror"  src="/eye-icon.png" alt="">
-          <div class="glitch-strip glitch-strip--1"></div>
-          <div class="glitch-strip glitch-strip--2"></div>
-          <div class="photo-meta photo-meta--tl">ISO 1600 · f/1.8</div>
-          <div class="photo-meta photo-meta--tr">04/10/31</div>
-        </div>
-        <figcaption class="photo-caption">My friend Cristal</figcaption>
-      </div>
+      <div class="photo-frame"><div class="photo-img"><img class="img-normal" src="/muñeca.png" alt="My friend Cristal"><img class="img-horror" src="/eye-icon.png" alt=""><div class="glitch-strip glitch-strip--1"></div><div class="glitch-strip glitch-strip--2"></div><div class="photo-meta photo-meta--tl">ISO 1600 · f/1.8</div><div class="photo-meta photo-meta--tr">04/10/31</div></div><figcaption class="photo-caption">My friend Cristal</figcaption></div>
     </figure>
-
-    <!-- ── FOTO 4 ── -->
     <figure class="photo-card photo-card--4">
-      <div class="photo-frame">
-        <div class="photo-img">
-          <img class="img-normal" src="/phone.jpg" alt="My new phone">
-          <img class="img-horror"  src="/doll-icon.png" alt="">
-          <div class="glitch-strip glitch-strip--1"></div>
-          <div class="glitch-strip glitch-strip--2"></div>
-          <div class="photo-meta photo-meta--tl">ISO 400 · f/5.6</div>
-          <div class="photo-meta photo-meta--tr">04/11/01</div>
-        </div>
-        <figcaption class="photo-caption">My new phone</figcaption>
-      </div>
-    </figure>
-
-    <!-- ── FOTO 5 ── -->
-    <figure class="photo-card photo-card--5">
-      <div class="photo-frame">
-        <div class="photo-img">
-          <img class="img-normal" src="/proof3.jpg" alt="Proof #3: My brother's toy">
-          <img class="img-horror"  src="/cross-icon.png" alt="">
-          <div class="glitch-strip glitch-strip--1"></div>
-          <div class="glitch-strip glitch-strip--2"></div>
-          <div class="photo-meta photo-meta--tl">ISO 3200 · f/2.0</div>
-          <div class="photo-meta photo-meta--tr">04/11/01</div>
-        </div>
-        <figcaption class="photo-caption">Proof #3: My brother's toy</figcaption>
-      </div>
-    </figure>
-
-    <!-- ── FOTO 6 ── -->
-    <figure class="photo-card photo-card--6">
-      <div class="photo-frame">
-        <div class="photo-img">
-          <img class="img-normal" src="/proof10.jpg" alt="Proof #10: Leo...?">
-          <img class="img-horror"  src="/folder-icon.png" alt="">
-          <div class="glitch-strip glitch-strip--1"></div>
-          <div class="glitch-strip glitch-strip--2"></div>
-          <div class="photo-meta photo-meta--tl">ISO 6400 · f/1.4</div>
-          <div class="photo-meta photo-meta--tr">04/11/01</div>
-        </div>
-        <figcaption class="photo-caption">Proof #10: Leo...?</figcaption>
-      </div>
+      <div class="photo-frame"><div class="photo-img"><img class="img-normal" src="/movil.png" alt="My new phone"><img class="img-horror" src="/doll-icon.png" alt=""><div class="glitch-strip glitch-strip--1"></div><div class="glitch-strip glitch-strip--2"></div><div class="photo-meta photo-meta--tl">ISO 400 · f/5.6</div><div class="photo-meta photo-meta--tr">04/11/01</div></div><figcaption class="photo-caption">My new phone</figcaption></div>
     </figure>
 
   </div>
 </section>
 
 <script>
-  const playBtn = document.getElementById('play-btn');
-  const iframe  = document.getElementById('tv-iframe');
-  if (playBtn && iframe) {
-    playBtn.addEventListener('click', () => {
-      iframe.contentWindow?.postMessage(JSON.stringify({event:'command',func:'playVideo',args:[]}), '*');
-      playBtn.style.opacity = '0';
-      playBtn.style.pointerEvents = 'none';
-    });
-  }
+  window.addEventListener('load', () => {
+    const playBtn = document.getElementById('play-btn');
+    const iframe  = document.getElementById('tv-iframe');
+    if (playBtn && iframe) {
+      playBtn.addEventListener('click', () => {
+        (iframe as HTMLIFrameElement).contentWindow?.postMessage(JSON.stringify({event:'command',func:'playVideo',args:[]}), '*');
+        (playBtn as HTMLElement).style.opacity = '0';
+        (playBtn as HTMLElement).style.pointerEvents = 'none';
+      });
+    }
+  });
 </script>
-</html>

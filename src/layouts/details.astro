@@ -4,7 +4,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=VT323&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet" />
 
 <section class="game-info-wrapper">
 
@@ -109,6 +109,11 @@
 </section>
 
 <style>
+  /* ─── Rubik Bubbles en todo ─────────────────────────────── */
+  :root {
+    --font: 'Rubik Bubbles', cursive;
+  }
+
   .game-info-wrapper * { box-sizing: border-box; margin: 0; padding: 0; }
 
   .game-info-wrapper {
@@ -117,7 +122,7 @@
     justify-content: center;
     align-items: flex-start;
     padding: 5rem 2rem 4rem;
-    font-family: 'Comic Neue', cursive;
+    font-family: var(--font);
   }
 
   /* Wax Seal */
@@ -143,9 +148,9 @@
     50%     { transform: rotate(-15deg) scale(1.05); }
   }
   .seal-inner { text-align:center; line-height:1.1; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.3); }
-  .seal-text  { display:block; font-family:'VT323',monospace; font-size:20px; letter-spacing:1px; opacity:.85; }
-  .seal-main  { display:block; font-family:'Comic Neue',cursive; font-weight:700; font-size:22px; line-height:1.2; }
-  .seal-stars { display:block; font-size:13px; opacity:.8; margin-top:3px; }
+  .seal-text  { display:block; font-family:var(--font); font-size:16px; letter-spacing:1px; opacity:.85; }
+  .seal-main  { display:block; font-family:var(--font); font-size:18px; line-height:1.2; }
+  .seal-stars { display:block; font-size:11px; opacity:.8; margin-top:3px; }
 
   /* Memory Card */
   .memory-card {
@@ -175,9 +180,9 @@
     padding-bottom: 1.5rem;
     border-bottom: 3px solid #FFB6C1;
   }
-  .card-label-top { font-family:'VT323',monospace; font-size:26px; color:#FF1493; letter-spacing:6px; display:block; margin-bottom:4px; }
-  .card-title     { font-family:'VT323',monospace; font-size:96px; color:#1a1a1a; line-height:1; letter-spacing:4px; text-shadow:5px 5px 0 #FF69B4; }
-  .card-subtitle  { font-family:'Comic Neue',cursive; font-size:18px; font-weight:700; color:#FF69B4; letter-spacing:3px; text-transform:uppercase; margin-top:6px; }
+  .card-label-top { font-family:var(--font); font-size:20px; color:#FF1493; letter-spacing:4px; display:block; margin-bottom:4px; }
+  .card-title     { font-family:var(--font); font-size:80px; color:#1a1a1a; line-height:1; letter-spacing:2px; text-shadow:5px 5px 0 #FF69B4; }
+  .card-subtitle  { font-family:var(--font); font-size:15px; color:#FF69B4; letter-spacing:2px; text-transform:uppercase; margin-top:6px; }
   .pixel-heart    { font-size:90px; color:#FF1493; animation:heartBeat .8s ease-in-out infinite; text-shadow:0 0 20px #FF69B4,0 0 40px #FFB6C1; line-height:1; }
   @keyframes heartBeat {
     0%,100% { transform:scale(1); }
@@ -201,19 +206,19 @@
   .spec-cell--wide  { grid-column: span 2; }
   .spec-cell--dates { grid-column: span 2; }
 
-  .spec-label { font-family:'VT323',monospace; font-size:22px; color:#FF1493; letter-spacing:3px; text-transform:uppercase; margin-bottom:8px; display:block; }
-  .spec-value { font-family:'Comic Neue',cursive; font-weight:700; font-size:26px; color:#1a1a1a; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .spec-label { font-family:var(--font); font-size:18px; color:#FF1493; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; display:block; }
+  .spec-value { font-family:var(--font); font-size:22px; color:#1a1a1a; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
 
   /* Status */
   .status-value { color:#cc0066; }
   .heart-beat   { animation:heartBeat .8s ease-in-out infinite; display:inline-block; color:#FF1493; }
 
   /* Platform */
-  .platform-value { font-family:'VT323',monospace; font-size:46px; letter-spacing:2px; color:#FF1493; }
+  .platform-value { font-family:var(--font); font-size:36px; letter-spacing:1px; color:#FF1493; }
 
   /* Engine */
-  .engine-value { font-size:26px; }
-  .godot-icon   { color:#FF1493; font-size:34px; animation:godotSpin 4s linear infinite; display:inline-block; }
+  .engine-value { font-size:22px; }
+  .godot-icon   { color:#FF1493; font-size:30px; animation:godotSpin 4s linear infinite; display:inline-block; }
   @keyframes godotSpin {
     0%   { transform:rotate(0deg);   color:#FF69B4; }
     50%  { color:#FF1493; }
@@ -224,7 +229,7 @@
   .rating-value    { gap:12px; align-items:center; }
   .stars-container { display:flex; gap:4px; }
   .star {
-    font-size: 46px;
+    font-size: 40px;
     color: #FFD700;
     text-shadow: 0 0 6px #FFD700, 0 0 12px #FFA500;
     display: inline-block;
@@ -236,28 +241,27 @@
     0%,100% { transform:scale(1);    text-shadow:0 0 6px #FFD700,0 0 12px #FFA500; }
     50%     { transform:scale(1.15); text-shadow:0 0 12px #FFD700,0 0 28px #FFE066,0 0 40px #FFB700; }
   }
-  .rating-num { font-family:'VT323',monospace; font-size:50px; color:#cc8800; letter-spacing:2px; }
+  .rating-num { font-family:var(--font); font-size:40px; color:#cc8800; letter-spacing:1px; }
 
   /* Fechas */
   .dates-value { flex-direction:column; align-items:flex-start; gap:10px; }
-  .date-line   { display:flex; align-items:center; gap:10px; font-family:'VT323',monospace; font-size:34px; color:#1a1a1a; }
-  .date-icon   { color:#FF69B4; font-size:24px; width:24px; text-align:center; }
+  .date-line   { display:flex; align-items:center; gap:10px; font-family:var(--font); font-size:26px; color:#1a1a1a; }
+  .date-icon   { color:#FF69B4; font-size:20px; width:24px; text-align:center; }
   .date-text strong { color:#FF1493; }
 
   /* Author */
-  .author-value  { flex-direction:column; align-items:center; gap:4px; font-size:26px; }
+  .author-value  { flex-direction:column; align-items:center; gap:4px; font-size:22px; }
   .author-avatar { font-size:54px; color:#FF69B4; animation:flowerSpin 6s linear infinite; display:block; text-align:center; width:100%; }
   @keyframes flowerSpin { 0% { transform:rotate(0deg); } 100% { transform:rotate(360deg); } }
 
   /* Tags */
   .tags-section { border-top:3px dashed #FFB6C1; padding-top:1.5rem; margin-bottom:1.5rem; }
-  .tags-label   { font-family:'VT323',monospace; font-size:28px; color:#FF1493; letter-spacing:4px; margin-bottom:14px; }
+  .tags-label   { font-family:var(--font); font-size:22px; color:#FF1493; letter-spacing:3px; margin-bottom:14px; }
   .tags-container { display:flex; flex-wrap:wrap; gap:14px; }
 
   .tag {
-    font-family: 'Comic Neue', cursive;
-    font-weight: 700;
-    font-size: 22px;
+    font-family: var(--font);
+    font-size: 18px;
     background: #fff;
     color: #1a1a1a;
     border: 3px solid #1a1a1a;
@@ -283,8 +287,8 @@
   .tag[data-secret]::after {
     content:attr(data-secret); position:absolute; inset:0;
     display:flex; align-items:center; justify-content:center;
-    font-family:'VT323',monospace; font-size:20px; color:#ff2222;
-    letter-spacing:2px; text-shadow:0 0 8px #ff0000;
+    font-family:var(--font); font-size:16px; color:#ff2222;
+    letter-spacing:1px; text-shadow:0 0 8px #ff0000;
     z-index:2; opacity:0; transition:opacity .3s .1s; white-space:nowrap;
   }
   .tag[data-secret]:hover::before { transform:scale(2.5) rotate(-5deg); opacity:1; }
@@ -293,8 +297,8 @@
 
   /* Footer */
   .card-footer { display:flex; justify-content:space-between; align-items:center; padding-top:1rem; border-top:2px solid #FFD6E8; }
-  .footer-dots { font-family:'VT323',monospace; font-size:22px; color:#FFB6C1; letter-spacing:2px; overflow:hidden; flex:1; }
-  .footer-code { font-family:'VT323',monospace; font-size:26px; color:#FF69B4; letter-spacing:3px; white-space:nowrap; margin-left:12px; }
+  .footer-dots { font-family:var(--font); font-size:18px; color:#FFB6C1; letter-spacing:2px; overflow:hidden; flex:1; }
+  .footer-code { font-family:var(--font); font-size:20px; color:#FF69B4; letter-spacing:2px; white-space:nowrap; margin-left:12px; }
 
   /* Responsive */
   @media (max-width: 960px) {
@@ -302,13 +306,13 @@
     .spec-cell--wide, .spec-cell--dates { grid-column:span 2; }
     .wax-seal    { right:1.5rem; top:1rem; width:100px; height:100px; }
     .memory-card { padding:2.5rem 2rem 2rem; }
-    .card-title  { font-size:70px; }
+    .card-title  { font-size:60px; }
     .pixel-heart { font-size:64px; }
   }
   @media (max-width: 580px) {
     .specs-grid { grid-template-columns:1fr; }
     .spec-cell--wide, .spec-cell--dates { grid-column:span 1; }
-    .card-title  { font-size:52px; }
+    .card-title  { font-size:42px; }
     .pixel-heart { font-size:48px; }
     .memory-card { padding:1.8rem 1.2rem 1.4rem; }
   }

@@ -1,0 +1,221 @@
+---
+// ═══════════════════════════════════════════════
+//  CREDITS — THE COOL CREW
+//  Añade o edita miembros aquí 👇
+// ═══════════════════════════════════════════════
+const crew = [
+  {
+    name:    "Ana Belén Rodríguez",
+    role:    "Itch.io Web Maker",
+    status:  "Coding in pink ink",
+    avatar:  "/foto-ana.png",
+  },
+  {
+    name:    "Yolanda",
+    role:    "Main Story & Text Writer",
+    status:  "Cute but cursed",
+    avatar:  "/yolanda.jpg",
+  },
+  {
+    name:    "Ahysen",
+    role:    "Game Architect & Main Game Developer",
+    status:  "404: soul not found",
+    avatar:  "/a.png",
+  },
+  {
+    name:    "Dexteru",
+    role:    "3D Artist",
+    status:  "fixing bugs... or am i?",
+    avatar:  "/d.png",
+  },
+  {
+    name:    "Cybele",
+    role:    "2D Artist",
+    status:  "Not now, death. I'm painting",
+    avatar:  "/foto-tere.jpg",
+  },
+  {
+    name:    "Citingmarc",
+    role:    "Developer & 3D Artist",
+    status:  "The glitch in your dollhouse",
+    avatar:  "/marc.jpg",
+  },
+  {
+    name:    "Tess",
+    role:    "Design",
+    status:  "Making dolls move...",
+    avatar:  "/t.png",
+  },
+    {
+    name:    "Jewelz",
+    role:    "Sound Special effects",
+    status:  "building your nightmare",
+    avatar:  "/j.png",
+  },
+];
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet" />
+
+<style>
+:root {
+  --pink:#FF69B4;
+  --neon:#FF1493;
+  --pale:#FFB1D1;
+  --deep:#0a0007;
+  --card-bg:rgba(20,0,14,0.92);
+  --font-bubble:'Rubik Bubbles', cursive;
+}
+
+#credits {
+  position: relative;
+  padding: 5rem 1.5rem 6rem;
+  overflow: hidden;
+}
+
+.credits-title {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-bubble);
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  color: var(--pink);
+  text-align: center;
+  margin-bottom: .4rem;
+}
+
+.credits-sub {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-bubble);
+  font-size: clamp(.85rem, 1.5vw, 1.1rem);
+  color: var(--pale);
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.crew-grid {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.crew-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Cada card ocupa exactamente 1/4 del contenedor menos los gaps */
+.crew-card {
+  background: var(--card-bg);
+  border: 2px solid var(--pink);
+  border-radius: 6px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .6rem;
+  width: 220px;
+  flex-shrink: 0;
+  box-shadow:
+    0 0 0 1px rgba(255,105,180,.2),
+    0 0 12px rgba(255,20,147,.3),
+    inset 0 0 20px rgba(255,20,147,.05);
+  transition: .3s;
+}
+
+.crew-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow:
+    0 0 0 2px var(--neon),
+    0 0 24px rgba(255,20,147,.5),
+    0 12px 30px rgba(0,0,0,.6);
+}
+
+@media (max-width: 600px) {
+  .crew-card { width: 160px; }
+}
+@media (max-width: 400px) {
+  .crew-card { width: 100%; }
+}
+
+.avatar-wrap {
+  width: 80px;
+  height: 80px;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 3px solid var(--pink);
+}
+
+.crew-name {
+  font-family: var(--font-bubble);
+  font-size: 1.1rem;
+  color: var(--pink);
+  text-align: center;
+}
+
+.crew-role {
+  font-family: var(--font-bubble);
+  font-size: .85rem;
+  background: var(--neon);
+  color: white;
+  padding: .2rem .6rem;
+}
+
+.crew-status {
+  font-family: var(--font-bubble);
+  font-size: .9rem;
+  color: rgba(255,177,209,.75);
+  text-align: center;
+}
+</style>
+
+<section id="credits">
+
+  <h2 class="credits-title">✦ THE COOL CREW ✦</h2>
+  <p class="credits-sub">— the people behind the nightmare —</p>
+
+  <div class="crew-grid">
+
+    <!-- Fila 1: 4 cards -->
+    <div class="crew-row">
+      {crew.slice(0, 4).map((member) => (
+        <div class="crew-card">
+          <div class="avatar-wrap">
+            <img class="avatar-img" src={member.avatar} alt={member.name} />
+          </div>
+          <span class="crew-name">{member.name}</span>
+          <span class="crew-role">{member.role}</span>
+          <p class="crew-status">{member.status}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Fila 2: 3 cards centradas -->
+    <div class="crew-row">
+      {crew.slice(4).map((member) => (
+        <div class="crew-card">
+          <div class="avatar-wrap">
+            <img class="avatar-img" src={member.avatar} alt={member.name} />
+          </div>
+          <span class="crew-name">{member.name}</span>
+          <span class="crew-role">{member.role}</span>
+          <p class="crew-status">{member.status}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+
+</section>

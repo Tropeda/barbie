@@ -1,49 +1,37 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Synopsis — Preview</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=VT323&family=Press+Start+2P&display=swap" rel="stylesheet"/>
 ---
+// hero.astro — Synopsis / Diary section
+// Sin <!DOCTYPE>, <html>, <head> ni <body> — eso lo maneja Layout.astro
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=VT323&family=Press+Start+2P&display=swap" rel="stylesheet" />
 
 <section class="diary-section">
 
-<!-- Elementos flotantes decorativos - ORIGINALES -->
-<div class="sticker sticker--star-tl" aria-hidden="true"><img src="/icono1.png" alt="" /></div>
-<div class="sticker sticker--butterfly-tr" aria-hidden="true"><img src="/icono2.png" alt="" /></div>
-<div class="sticker sticker--heart-bl" aria-hidden="true"><img src="/icono3.png" alt="" /></div>
-<div class="sticker sticker--star-br" aria-hidden="true"><img src="/icono6.png" alt="" /></div>
-<div class="sticker sticker--glitter-1" aria-hidden="true"><img src="/icono5.png" alt="" /></div>
-<div class="sticker sticker--glitter-2" aria-hidden="true"><img src="/icono6.png" alt="" /></div>
-<div class="sticker sticker--butterfly-2" aria-hidden="true"><img src="/icono7.png" alt="" /></div>
+  <div class="sticker sticker--star-tl"       aria-hidden="true"><img src="/icono1.png" alt="" /></div>
+  <div class="sticker sticker--butterfly-tr"  aria-hidden="true"><img src="/icono2.png" alt="" /></div>
+  <div class="sticker sticker--heart-bl"      aria-hidden="true"><img src="/icono3.png" alt="" /></div>
+  <div class="sticker sticker--star-br"       aria-hidden="true"><img src="/icono6.png" alt="" /></div>
+  <div class="sticker sticker--glitter-1"     aria-hidden="true"><img src="/icono5.png" alt="" /></div>
+  <div class="sticker sticker--glitter-2"     aria-hidden="true"><img src="/icono6.png" alt="" /></div>
+  <div class="sticker sticker--butterfly-2"   aria-hidden="true"><img src="/icono7.png" alt="" /></div>
+  <div class="sticker sticker--star-tl-2"     aria-hidden="true"><img src="/icono7.png" alt="" /></div>
+  <div class="sticker sticker--butterfly-tr-2" aria-hidden="true"><img src="/icono6.png" alt="" /></div>
+  <div class="sticker sticker--heart-bl-2"    aria-hidden="true"><img src="/icono5.png" alt="" /></div>
+  <div class="sticker sticker--star-br-2"     aria-hidden="true"><img src="/icono4.png" alt="" /></div>
+  <div class="sticker sticker--glitter-3"     aria-hidden="true"><img src="/icono3.png" alt="" /></div>
+  <div class="sticker sticker--glitter-4"     aria-hidden="true"><img src="/icono2.png" alt="" /></div>
+  <div class="sticker sticker--butterfly-3"   aria-hidden="true"><img src="/icono1.png" alt="" /></div>
+  <div class="sticker sticker--star-tl-3"     aria-hidden="true"><img src="/icono1.png" alt="" /></div>
+  <div class="sticker sticker--heart-bl-3"    aria-hidden="true"><img src="/icono6.png" alt="" /></div>
+  <div class="sticker sticker--star-br-3"     aria-hidden="true"><img src="/icono4.png" alt="" /></div>
+  <div class="sticker sticker--butterfly-4"   aria-hidden="true"><img src="/icono5.png" alt="" /></div>
+  <div class="sticker sticker--glitter-5"     aria-hidden="true"><img src="/icono7.png" alt="" /></div>
 
-<!-- ✧ MÁS ELEMENTOS - REPETIDOS CON NUEVAS POSICIONES ✧ -->
-<div class="sticker sticker--star-tl-2" aria-hidden="true"><img src="/icono7.png" alt="" /></div>
-<div class="sticker sticker--butterfly-tr-2" aria-hidden="true"><img src="/icono6.png" alt="🦋" /></div>
-<div class="sticker sticker--heart-bl-2" aria-hidden="true"><img src="/icono5.png" alt="" /></div>
-<div class="sticker sticker--star-br-2" aria-hidden="true"><img src="/icono4.png" alt="" /></div>
-<div class="sticker sticker--glitter-3" aria-hidden="true"><img src="/icono3.png" alt="" /></div>
-<div class="sticker sticker--glitter-4" aria-hidden="true"><img src="/icono2.png" alt="" /></div>
-<div class="sticker sticker--butterfly-3" aria-hidden="true"><img src="/icono1.png" alt="" /></div>
-
-<!-- ✧ OTRA RONDA MÁS ✧ -->
-<div class="sticker sticker--star-tl-3" aria-hidden="true"><img src="/icono1.png" alt="" /></div>
-<div class="sticker sticker--heart-bl-3" aria-hidden="true"><img src="/icono6.png" alt="" /></div>
-<div class="sticker sticker--star-br-3" aria-hidden="true"><img src="/icono4.png" alt="" /></div>
-<div class="sticker sticker--butterfly-4" aria-hidden="true"><img src="/icono5.png" alt="" /></div>
-<div class="sticker sticker--glitter-5" aria-hidden="true"><img src="/icono7.png" alt="" /></div>
-  
-
-  <!-- Cinta adhesiva (tape) en esquinas -->
   <div class="tape tape--tl" aria-hidden="true"></div>
   <div class="tape tape--tr" aria-hidden="true"></div>
 
-  <!-- Hoja del diario -->
   <div class="diary-page">
-
-    <!-- Encabezado del diario -->
     <div class="diary-header">
       <span class="diary-date">Tuesday, October 31, 2004</span>
       <div class="diary-doodles" aria-hidden="true">
@@ -51,23 +39,14 @@
       </div>
     </div>
 
-    <!-- Línea horizontal decorativa -->
     <div class="diary-rule" aria-hidden="true"></div>
 
-    <!-- Cuerpo del diario -->
     <div class="diary-body">
-
-      <!-- Nota al margen izquierda -->
       <aside class="margin-note margin-note--left" aria-label="Nota al margen">
-        <span>☆ super</span>
-        <span>girl</span>
-        <span>☆</span>
-        <span class="margin-arrow">→</span>
+        <span>☆ super</span><span>girl</span><span>☆</span><span class="margin-arrow">→</span>
       </aside>
 
-      <!-- Texto principal -->
       <div class="diary-text">
-
         <p class="diary-entry diary-entry--1">
           <span class="diary-cap">H</span>ello diary!. Today I am
           <span class="underline-pink">SUPER</span> angry with Leo.
@@ -78,7 +57,6 @@
           cares what I say.
         </p>
 
-        <!-- Mancha de café interactiva #1 -->
         <div class="stain stain--coffee" tabindex="0" aria-label="Mancha en el diario">
           <span class="stain-hidden-msg">My doll is acting weird...</span>
         </div>
@@ -99,11 +77,8 @@
           Leo won't get away with it this time.
         </p>
 
-        <!-- Nota al margen derecha -->
         <aside class="margin-note margin-note--right" aria-label="Nota al margen">
-          <span>I love</span>
-          <span>Cristal</span>
-          <span class="margin-star">★</span>
+          <span>I love</span><span>Cristal</span><span class="margin-star">★</span>
         </aside>
 
         <p class="diary-entry diary-entry--4">
@@ -112,12 +87,8 @@
           photo number seven onwards...
         </p>
 
-        <!-- Separador visual -->
-        <div class="horror-divider" aria-hidden="true">
-          <span>— — —</span>
-        </div>
+        <div class="horror-divider" aria-hidden="true"><span>— — —</span></div>
 
-        <!-- Texto final -->
         <p class="diary-entry diary-entry--5 diary-entry--horror">
           I'm scared, this isn't
           <span class="horror-word">normal...</span>
@@ -125,24 +96,19 @@
           <span class="glitch-text" data-text="Who's in my room?">Who's in my doll's house?</span>
         </p>
 
-        <!-- Firma del diario -->
         <div class="diary-signature">
           <span class="signature-name">— Nerea</span>
           <div class="signature-doodles" aria-hidden="true">♥ ★ ♥</div>
         </div>
+      </div>
+    </div>
 
-      </div><!-- /diary-text -->
-    </div><!-- /diary-body -->
-
-    <!-- Borde desgastado inferior -->
     <div class="torn-edge torn-edge--bottom" aria-hidden="true"></div>
-
-  </div><!-- /diary-page -->
+  </div>
 
 </section>
 
 <style>
-  /* ─── Variables ─────────────────────────────────────────── */
   :root {
     --pink-hot:      #FF69B4;
     --pink-neon:     #FF1493;
@@ -155,519 +121,134 @@
     --ink-blue:      #1A237E;
     --coffee:        #6F4E37;
     --white:         #FFFFFF;
-
     --font-diary:    'Gloria Hallelujah', cursive;
     --font-margin:   'VT323', monospace;
     --font-pixel:    'Press Start 2P', monospace;
   }
 
-  /* ─── Fuentes ───────────────────────────────────────────── */
-  
-
-  /* ─── Sección contenedor ────────────────────────────────── */
   .diary-section {
-    position: relative;
-    z-index: 30;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 4rem 1.5rem;
-    overflow: hidden;
+    position: relative; z-index: 30;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100vh; padding: 4rem 1.5rem; overflow: hidden;
   }
 
-  /* Estrellas y purpurina flotantes */
   .sticker {
-    position: absolute;
-    font-size: 1.8rem;
-    pointer-events: none;
-    user-select: none;
-    z-index: 2;
+    position: absolute; font-size: 1.8rem; pointer-events: none;
+    user-select: none; z-index: 2;
     filter: drop-shadow(0 2px 6px rgba(255,105,180,0.6));
     animation: sticker-float 4s ease-in-out infinite;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
   }
-  .sticker img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-/* Nuevas posiciones para más stickers */
-.sticker--star-tl-2      { top: 8rem;   left: 5rem;   animation-delay: 0.3s;  font-size: 2rem; width: 2rem; height: 2rem; }
-.sticker--butterfly-tr-2 { top: 10rem;  right: 6rem;  animation-delay: 1.2s;  font-size: 2.2rem; width: 2.2rem; height: 2.2rem; }
-.sticker--heart-bl-2     { bottom: 8rem; left: 7rem;  animation-delay: 1.9s;  font-size: 2rem; width: 2rem; height: 2rem; }
-.sticker--star-br-2      { bottom: 7rem; right: 6rem; animation-delay: 0.7s;  font-size: 2.5rem; width: 2.5rem; height: 2.5rem; }
-.sticker--glitter-3      { top: 45%;   left: 3rem;    animation-delay: 2.5s;  font-size: 1.6rem; width: 1.6rem; height: 1.6rem; }
-.sticker--glitter-4      { top: 70%;   right: 4rem;   animation-delay: 1.5s;  font-size: 1.5rem; width: 1.5rem; height: 1.5rem; }
-.sticker--butterfly-3    { bottom: 40%; left: 8rem;   animation-delay: 2.8s;  font-size: 1.7rem; width: 1.7rem; height: 1.7rem; }
-.sticker--star-tl-3      { top: 15rem;  left: 1rem;   animation-delay: 1.1s;  font-size: 1.8rem; width: 1.8rem; height: 1.8rem; }
-.sticker--heart-bl-3     { bottom: 15rem; left: 2rem; animation-delay: 2.1s;  font-size: 1.9rem; width: 1.9rem; height: 1.9rem; }
-.sticker--star-br-3      { bottom: 12rem; right: 3rem; animation-delay: 0.2s; font-size: 2.2rem; width: 2.2rem; height: 2.2rem; }
-.sticker--butterfly-4    { top: 55%;   right: 2rem;   animation-delay: 1.7s;  font-size: 1.6rem; width: 1.6rem; height: 1.6rem; }
-.sticker--glitter-5      { top: 25%;   left: 6rem;    animation-delay: 2.4s;  font-size: 1.4rem; width: 1.4rem; height: 1.4rem; }
+  .sticker img { width: 100%; height: 100%; object-fit: contain; }
 
-  /* Cintas adhesivas */
-  .tape {
-    position: absolute;
-    width: 70px; height: 26px;
-    background: rgba(255, 220, 240, 0.55);
-    border: 1px solid rgba(255,255,255,0.7);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    z-index: 5;
-    backdrop-filter: blur(2px);
-  }
-  .tape--tl {
-    top: -8px; left: 60px;
-    transform: rotate(-8deg);
-  }
-  .tape--tr {
-    top: -8px; right: 60px;
-    transform: rotate(6deg);
-  }
+  .sticker--star-tl        { top: 2rem;    left: 2rem;   width: 2rem;   height: 2rem; }
+  .sticker--butterfly-tr   { top: 4rem;    right: 3rem;  width: 2.5rem; height: 2.5rem; animation-delay: 0.6s; }
+  .sticker--heart-bl       { bottom: 5rem; left: 4rem;   width: 2rem;   height: 2rem; animation-delay: 1.2s; }
+  .sticker--star-br        { bottom: 8rem; right: 2rem;  width: 2.5rem; height: 2.5rem; animation-delay: 0.3s; }
+  .sticker--glitter-1      { top: 30%;     left: 1rem;   width: 1.8rem; height: 1.8rem; animation-delay: 0.9s; }
+  .sticker--glitter-2      { top: 60%;     right: 1rem;  width: 1.6rem; height: 1.6rem; animation-delay: 1.5s; }
+  .sticker--butterfly-2    { bottom: 20%;  left: 6rem;   width: 2rem;   height: 2rem; animation-delay: 2s; }
+  .sticker--star-tl-2      { top: 8rem;    left: 5rem;   width: 2rem;   height: 2rem; animation-delay: 0.3s; }
+  .sticker--butterfly-tr-2 { top: 10rem;   right: 6rem;  width: 2.2rem; height: 2.2rem; animation-delay: 1.2s; }
+  .sticker--heart-bl-2     { bottom: 8rem; left: 7rem;   width: 2rem;   height: 2rem; animation-delay: 1.9s; }
+  .sticker--star-br-2      { bottom: 7rem; right: 6rem;  width: 2.5rem; height: 2.5rem; animation-delay: 0.7s; }
+  .sticker--glitter-3      { top: 45%;     left: 3rem;   width: 1.6rem; height: 1.6rem; animation-delay: 2.5s; }
+  .sticker--glitter-4      { top: 70%;     right: 4rem;  width: 1.5rem; height: 1.5rem; animation-delay: 1.5s; }
+  .sticker--butterfly-3    { bottom: 40%;  left: 8rem;   width: 1.7rem; height: 1.7rem; animation-delay: 2.8s; }
+  .sticker--star-tl-3      { top: 15rem;   left: 1rem;   width: 1.8rem; height: 1.8rem; animation-delay: 1.1s; }
+  .sticker--heart-bl-3     { bottom: 15rem; left: 2rem;  width: 1.9rem; height: 1.9rem; animation-delay: 2.1s; }
+  .sticker--star-br-3      { bottom: 12rem; right: 3rem; width: 2.2rem; height: 2.2rem; animation-delay: 0.2s; }
+  .sticker--butterfly-4    { top: 55%;     right: 2rem;  width: 1.6rem; height: 1.6rem; animation-delay: 1.7s; }
+  .sticker--glitter-5      { top: 25%;     left: 6rem;   width: 1.4rem; height: 1.4rem; animation-delay: 2.4s; }
 
-  /* ─── Página del diario ─────────────────────────────────── */
+  .tape { position: absolute; width: 70px; height: 26px; background: rgba(255,220,240,0.55); border: 1px solid rgba(255,255,255,0.7); box-shadow: 0 2px 8px rgba(0,0,0,0.15); z-index: 5; backdrop-filter: blur(2px); }
+  .tape--tl { top: -8px; left: 60px; transform: rotate(-8deg); }
+  .tape--tr { top: -8px; right: 60px; transform: rotate(6deg); }
+
   .diary-page {
-    position: relative;
-    max-width: 780px;
-    width: 100%;
-    z-index: 3;
-
-    /* Papel cuadriculado rosa */
+    position: relative; max-width: 780px; width: 100%; z-index: 3;
     background-color: var(--pink-paper);
-    background-image:
-      linear-gradient(rgba(255,105,180,0.15) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,105,180,0.15) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(255,105,180,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,105,180,0.15) 1px, transparent 1px);
     background-size: 28px 28px;
-
-    /* Borde y sombra tipo página real */
     border-radius: 4px 4px 2px 2px;
-    box-shadow:
-      0 4px 6px rgba(0,0,0,0.08),
-      0 12px 40px rgba(255,20,147,0.15),
-      0 30px 80px rgba(0,0,0,0.25),
-      inset 0 0 60px rgba(255,182,193,0.12);
-
-    /* Inclinación del diario */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.08), 0 12px 40px rgba(255,20,147,0.15), 0 30px 80px rgba(0,0,0,0.25), inset 0 0 60px rgba(255,182,193,0.12);
     transform: rotate(-1.2deg);
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
   }
   .diary-page:hover { transform: rotate(-0.4deg) scale(1.005); }
-
-  /* Borde izquierdo tipo espiral */
-  .diary-page::before {
-    content: '';
-    position: absolute;
-    left: 52px; top: 0; bottom: 0;
-    width: 2px;
-    background: rgba(255,100,150,0.35);
-    z-index: 1;
-  }
-
-  /* Borde desgastado superior */
+  .diary-page::before { content: ''; position: absolute; left: 52px; top: 0; bottom: 0; width: 2px; background: rgba(255,100,150,0.35); z-index: 1; }
   .diary-page::after {
-    content: '';
-    position: absolute;
-    top: -6px; left: -4px; right: -4px;
-    height: 14px;
+    content: ''; position: absolute; top: -6px; left: -4px; right: -4px; height: 14px;
     background: var(--pink-paper);
-    clip-path: polygon(
-      0% 100%, 1% 20%, 2.5% 80%, 4% 10%, 5.5% 70%, 7% 5%,
-      8.5% 85%, 10% 15%, 12% 75%, 14% 0%, 16% 90%, 18% 20%,
-      20% 60%, 22% 5%, 24% 80%, 26% 30%, 28% 95%, 30% 10%,
-      32% 70%, 34% 0%, 36% 85%, 38% 25%, 40% 65%, 42% 5%,
-      44% 75%, 46% 20%, 48% 90%, 50% 10%, 52% 80%, 54% 15%,
-      56% 70%, 58% 0%, 60% 88%, 62% 22%, 64% 78%, 66% 8%,
-      68% 92%, 70% 18%, 72% 68%, 74% 3%, 76% 82%, 78% 28%,
-      80% 60%, 82% 0%, 84% 85%, 86% 20%, 88% 72%, 90% 8%,
-      92% 78%, 94% 28%, 96% 88%, 98% 12%, 100% 65%, 100% 100%
-    );
-    filter: drop-shadow(0 -2px 3px rgba(0,0,0,0.1));
-    z-index: 2;
+    clip-path: polygon(0% 100%, 1% 20%, 2.5% 80%, 4% 10%, 5.5% 70%, 7% 5%, 8.5% 85%, 10% 15%, 12% 75%, 14% 0%, 16% 90%, 18% 20%, 20% 60%, 22% 5%, 24% 80%, 26% 30%, 28% 95%, 30% 10%, 32% 70%, 34% 0%, 36% 85%, 38% 25%, 40% 65%, 42% 5%, 44% 75%, 46% 20%, 48% 90%, 50% 10%, 52% 80%, 54% 15%, 56% 70%, 58% 0%, 60% 88%, 62% 22%, 64% 78%, 66% 8%, 68% 92%, 70% 18%, 72% 68%, 74% 3%, 76% 82%, 78% 28%, 80% 60%, 82% 0%, 84% 85%, 86% 20%, 88% 72%, 90% 8%, 92% 78%, 94% 28%, 96% 88%, 98% 12%, 100% 65%, 100% 100%);
+    filter: drop-shadow(0 -2px 3px rgba(0,0,0,0.1)); z-index: 2;
   }
 
-  /* ─── Encabezado del diario ─────────────────────────────── */
-  .diary-header {
-    padding: 2rem 2rem 0.5rem 4rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
+  .diary-header { padding: 2rem 2rem 0.5rem 4rem; display: flex; flex-direction: column; gap: 0.4rem; }
+  .diary-date   { font-family: var(--font-diary); font-size: clamp(0.65rem,1.5vw,0.8rem); color: var(--ink-blue); opacity: 0.7; }
+  .diary-doodles { font-size: 1rem; color: var(--pink-neon); letter-spacing: 0.4em; opacity: 0.6; }
+  .diary-rule   { margin: 0.5rem 2rem 0.5rem 4rem; height: 2px; background: linear-gradient(to right, transparent, rgba(255,20,147,0.4) 15%, rgba(255,20,147,0.4) 85%, transparent); }
 
-  .diary-date {
-    font-family: var(--font-diary);
-    font-size: clamp(0.65rem, 1.5vw, 0.8rem);
-    color: var(--ink-blue);
-    opacity: 0.7;
-  }
+  .diary-body   { position: relative; padding: 1rem 2.5rem 2rem 4.5rem; }
 
-  .diary-doodles {
-    font-size: 1rem;
-    color: var(--pink-neon);
-    letter-spacing: 0.4em;
-    opacity: 0.6;
-  }
-
-  .diary-rule {
-    margin: 0.5rem 2rem 0.5rem 4rem;
-    height: 2px;
-    background: linear-gradient(
-      to right,
-      transparent,
-      rgba(255,20,147,0.4) 15%,
-      rgba(255,20,147,0.4) 85%,
-      transparent
-    );
-  }
-
-  /* ─── Cuerpo ────────────────────────────────────────────── */
-  .diary-body {
-    position: relative;
-    padding: 1rem 2.5rem 2rem 4.5rem;
-  }
-
-  /* ─── Notas al margen ───────────────────────────────────── */
-  .margin-note {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-    font-family: var(--font-margin);
-    font-size: 0.75rem;
-    line-height: 1.3;
-    color: var(--pink-neon);
-    opacity: 0.75;
-    transform: rotate(-90deg);
-    transform-origin: center center;
-    white-space: nowrap;
-  }
-  .margin-note--left {
-    left: -1.5rem;
-    top: 40%;
-    transform: rotate(-90deg) translateX(-50%);
-    flex-direction: row;
-    gap: 0.5rem;
-  }
-  .margin-note--right {
-    right: -1rem;
-    top: 50%;
-    transform: rotate(90deg) translateX(-50%);
-    flex-direction: row;
-    gap: 0.5rem;
-    color: var(--blood-light);
-  }
+  .margin-note { position: absolute; display: flex; flex-direction: column; gap: 0.2rem; font-family: var(--font-margin); font-size: 0.75rem; line-height: 1.3; color: var(--pink-neon); opacity: 0.75; transform: rotate(-90deg); transform-origin: center center; white-space: nowrap; }
+  .margin-note--left  { left: -1.5rem; top: 40%; transform: rotate(-90deg) translateX(-50%); flex-direction: row; gap: 0.5rem; }
+  .margin-note--right { right: -1rem; top: 50%; transform: rotate(90deg) translateX(-50%); flex-direction: row; gap: 0.5rem; color: var(--blood-light); }
   .margin-arrow { font-size: 1rem; }
   .margin-star  { color: var(--pink-hot); }
 
-  /* ─── Texto del diario ──────────────────────────────────── */
-  .diary-text {
-    position: relative;
-  }
-
-  .diary-entry {
-    font-family: var(--font-diary);
-    font-size: clamp(0.82rem, 1.8vw, 1rem);
-    line-height: 2.1;
-    color: var(--ink-dark);
-    margin-bottom: 1.2rem;
-    position: relative;
-  }
-
-  /* Cada párrafo con inclinación ligeramente diferente */
-  .diary-entry--1 { transform: rotate(0.3deg);  }
+  .diary-text { position: relative; }
+  .diary-entry { font-family: var(--font-diary); font-size: clamp(0.82rem,1.8vw,1rem); line-height: 2.1; color: var(--ink-dark); margin-bottom: 1.2rem; position: relative; }
+  .diary-entry--1 { transform: rotate( 0.3deg); }
   .diary-entry--2 { transform: rotate(-0.4deg); }
-  .diary-entry--3 { transform: rotate(0.5deg);  }
+  .diary-entry--3 { transform: rotate( 0.5deg); }
   .diary-entry--4 { transform: rotate(-0.2deg); }
-  .diary-entry--5 { transform: rotate(0.4deg);  }
-  .diary-entry--6 { transform: rotate(-0.3deg); }
+  .diary-entry--5 { transform: rotate( 0.4deg); }
 
-  /* Letra capital */
-  .diary-cap {
-    float: left;
-    font-size: 3.5rem;
-    line-height: 0.75;
-    padding-right: 0.15rem;
-    padding-top: 0.15rem;
-    color: var(--pink-neon);
-    font-family: var(--font-diary);
-    text-shadow: 2px 2px 0 rgba(255,20,147,0.2);
-  }
+  .diary-cap { float: left; font-size: 3.5rem; line-height: 0.75; padding-right: 0.15rem; padding-top: 0.15rem; color: var(--pink-neon); font-family: var(--font-diary); text-shadow: 2px 2px 0 rgba(255,20,147,0.2); }
+  .underline-pink { border-bottom: 3px solid var(--pink-neon); padding-bottom: 1px; }
+  .highlight-pink { background: rgba(255,20,147,0.15); padding: 0 3px; border-radius: 3px; }
+  .scribble-word  { text-decoration: line-through; text-decoration-color: var(--pink-hot); text-decoration-thickness: 2px; }
+  .scribble-word--angry { text-decoration-color: var(--blood); text-decoration-thickness: 3px; color: var(--blood); font-weight: bold; }
+  .sticker-inline { display: inline-block; background: linear-gradient(135deg, rgba(255,105,180,0.2), rgba(255,20,147,0.1)); border: 1.5px solid rgba(255,105,180,0.5); border-radius: 6px; padding: 0.1rem 0.4rem; font-size: 0.9em; }
 
-  /* Subrayados y resaltados */
-  .underline-pink {
-    border-bottom: 3px solid var(--pink-neon);
-    padding-bottom: 1px;
-  }
-  .highlight-pink {
-    background: rgba(255,20,147,0.15);
-    padding: 0 3px;
-    border-radius: 3px;
-  }
+  .diary-entry--horror { color: #2a0a0a; line-height: 2.2; }
+  .horror-word { color: var(--blood); font-style: italic; position: relative; display: inline-block; }
+  .horror-word::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: var(--blood); opacity: 0.4; border-radius: 1px; }
+  .text-horror { color: var(--blood); font-weight: bold; }
+  .horror-divider { text-align: center; font-family: var(--font-diary); color: var(--blood); opacity: 0.5; margin: 0.75rem 0; font-size: 1.1rem; letter-spacing: 0.5em; animation: horror-blink 4s ease-in-out infinite; }
 
-  /* Palabras tachadas con garabato */
-  .scribble-word {
-    text-decoration: line-through;
-    text-decoration-color: var(--pink-hot);
-    text-decoration-thickness: 2px;
-  }
-  .scribble-word--angry {
-    text-decoration-color: var(--blood);
-    text-decoration-thickness: 3px;
-    color: var(--blood);
-    font-weight: bold;
-  }
+  .glitch-text { position: relative; display: inline-block; color: var(--blood); font-family: var(--font-diary); animation: glitch-idle 6s infinite; }
+  .glitch-text::before { content: attr(data-text); position: absolute; top: 0; left: 0; color: var(--pink-neon); clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%); animation: glitch-top 6s infinite; opacity: 0; }
+  .glitch-text::after  { content: attr(data-text); position: absolute; top: 0; left: 0; color: var(--blood); clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%); animation: glitch-bottom 6s infinite; opacity: 0; }
 
-  /* Sticker inline */
-  .sticker-inline {
-    display: inline-block;
-    background: linear-gradient(135deg, rgba(255,105,180,0.2), rgba(255,20,147,0.1));
-    border: 1.5px solid rgba(255,105,180,0.5);
-    border-radius: 6px;
-    padding: 0.1rem 0.4rem;
-    font-size: 0.9em;
-  }
+  .stain { position: relative; display: inline-block; margin: 0.75rem 0; cursor: pointer; transition: transform 0.3s ease; }
+  .stain:hover { transform: scale(1.05); }
+  .stain:focus { outline: none; }
+  .stain-hidden-msg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--font-pixel); font-size: 0.4rem; letter-spacing: 0.1em; color: var(--ink-dark); opacity: 0; transition: opacity 0.3s ease; white-space: nowrap; z-index: 2; text-shadow: 0 0 6px rgba(255,20,147,0.8); }
+  .stain:hover .stain-hidden-msg, .stain:focus .stain-hidden-msg { opacity: 1; animation: glitch-idle 1s infinite; }
+  .stain--coffee { width: 90px; height: 55px; background: radial-gradient(ellipse at 40% 45%, rgba(111,78,55,0.55) 0%, rgba(111,78,55,0.25) 45%, transparent 70%), radial-gradient(ellipse at 65% 55%, rgba(111,78,55,0.3) 0%, transparent 50%); border-radius: 50% 45% 55% 48% / 52% 48% 55% 45%; filter: blur(0.5px); transform: rotate(-8deg); }
 
-  /* ─── Sección de terror ─────────────────────────────────── */
-  .diary-entry--horror {
-    color: #2a0a0a;
-    line-height: 2.2;
-  }
+  .diary-signature { display: flex; flex-direction: column; align-items: flex-end; gap: 0.3rem; margin-top: 1.5rem; padding-right: 1rem; transform: rotate(-0.5deg); }
+  .signature-name   { font-family: var(--font-diary); font-size: clamp(1rem,2vw,1.2rem); color: var(--ink-dark); }
+  .signature-doodles { color: var(--pink-neon); font-size: 1.1rem; letter-spacing: 0.4em; opacity: 0.7; }
 
-  .horror-word {
-    color: var(--blood);
-    font-style: italic;
-    position: relative;
-    display: inline-block;
-  }
-  .horror-word::after {
-    content: '';
-    position: absolute;
-    bottom: -2px; left: 0; right: 0;
-    height: 2px;
-    background: var(--blood);
-    opacity: 0.4;
-    border-radius: 1px;
-  }
-  .horror-word--blink {
-    animation: horror-blink 3s ease-in-out infinite;
-  }
-  .horror-word--shake {
-    animation: horror-shake 4s ease-in-out infinite;
-    display: inline-block;
-  }
+  .torn-edge--bottom { height: 20px; background: var(--pink-paper); clip-path: polygon(0% 0%, 1.5% 100%, 3% 20%, 5% 95%, 7% 10%, 9% 80%, 11% 5%, 13% 90%, 15% 0%, 17% 75%, 19% 15%, 21% 100%, 23% 5%, 25% 85%, 27% 0%, 29% 70%, 31% 20%, 33% 100%, 35% 10%, 37% 85%, 39% 0%, 41% 80%, 43% 25%, 45% 100%, 47% 5%, 49% 90%, 51% 0%, 53% 75%, 55% 20%, 57% 95%, 59% 10%, 61% 80%, 63% 0%, 65% 88%, 67% 15%, 69% 95%, 71% 0%, 73% 78%, 75% 12%, 77% 92%, 79% 0%, 81% 85%, 83% 20%, 85% 100%, 87% 8%, 89% 82%, 91% 0%, 93% 90%, 95% 18%, 97% 78%, 100% 0%, 100% 0%, 0% 0%); margin-top: 1rem; filter: drop-shadow(0 4px 4px rgba(0,0,0,0.12)); }
 
-  .horror-underline {
-    border-bottom: 2px solid var(--blood);
-    padding-bottom: 1px;
-    color: var(--blood);
-  }
-
-  .text-horror {
-    color: var(--blood);
-    font-weight: bold;
-  }
-
-  /* Divisor de terror */
-  .horror-divider {
-    text-align: center;
-    font-family: var(--font-diary);
-    color: var(--blood);
-    opacity: 0.5;
-    margin: 0.75rem 0;
-    font-size: 1.1rem;
-    letter-spacing: 0.5em;
-    animation: horror-blink 4s ease-in-out infinite;
-  }
-
-  /* Texto final */
-  .diary-entry--final {
-    transform: rotate(1.5deg) !important;
-    margin-top: 1.5rem;
-  }
-
-  /* Glitch effect en texto final */
-  .glitch-text {
-    position: relative;
-    display: inline-block;
-    color: var(--blood);
-    font-family: var(--font-diary);
-    animation: glitch-idle 6s infinite;
-  }
-  .glitch-text::before {
-    content: attr(data-text);
-    position: absolute; top: 0; left: 0;
-    color: var(--pink-neon);
-    clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
-    animation: glitch-top 6s infinite;
-    opacity: 0;
-  }
-  .glitch-text::after {
-    content: attr(data-text);
-    position: absolute; top: 0; left: 0;
-    color: var(--blood);
-    clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
-    animation: glitch-bottom 6s infinite;
-    opacity: 0;
-  }
-
-  /* ─── Manchas interactivas ──────────────────────────────── */
-  .stain {
-    position: relative;
-    display: inline-block;
-    margin: 0.75rem 0;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-  .stain:hover  { transform: scale(1.05); }
-  .stain:focus  { outline: none; }
-
-  /* Mensaje oculto en la mancha */
-  .stain-hidden-msg {
-    position: absolute;
-    inset: 0;
-    display: flex; align-items: center; justify-content: center;
-    font-family: var(--font-pixel);
-    font-size: 0.4rem;
-    letter-spacing: 0.1em;
-    color: var(--ink-dark);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    white-space: nowrap;
-    z-index: 2;
-    text-shadow: 0 0 6px rgba(255,20,147,0.8);
-  }
-  .stain:hover .stain-hidden-msg,
-  .stain:focus .stain-hidden-msg {
-    opacity: 1;
-    animation: glitch-idle 1s infinite;
-  }
-
-  /* Mancha de café */
-  .stain--coffee {
-    width: 90px; height: 55px;
-    background:
-      radial-gradient(ellipse at 40% 45%, rgba(111,78,55,0.55) 0%, rgba(111,78,55,0.25) 45%, transparent 70%),
-      radial-gradient(ellipse at 65% 55%, rgba(111,78,55,0.3) 0%, transparent 50%);
-    border-radius: 50% 45% 55% 48% / 52% 48% 55% 45%;
-    filter: blur(0.5px);
-    transform: rotate(-8deg);
-  }
-
-  /* Mancha de sangre */
-  .stain--blood {
-    width: 70px; height: 40px;
-    background:
-      radial-gradient(ellipse at 50% 50%, rgba(139,0,0,0.65) 0%, rgba(139,0,0,0.3) 50%, transparent 75%);
-    border-radius: 45% 55% 50% 48% / 50% 52% 46% 54%;
-    filter: blur(0.3px);
-    transform: rotate(5deg);
-  }
-  .stain--blood::before {
-    content: '';
-    position: absolute;
-    top: 60%; left: 55%;
-    width: 20px; height: 8px;
-    background: rgba(139,0,0,0.45);
-    border-radius: 50%;
-    transform: rotate(-20deg);
-    filter: blur(1px);
-  }
-
-  /* ─── Firma ─────────────────────────────────────────────── */
-  .diary-signature {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.3rem;
-    margin-top: 1.5rem;
-    padding-right: 1rem;
-    transform: rotate(-0.5deg);
-  }
-  .signature-name {
-    font-family: var(--font-diary);
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    color: var(--ink-dark);
-  }
-  .signature-doodles {
-    color: var(--pink-neon); font-size: 1.1rem;
-    letter-spacing: 0.4em; opacity: 0.7;
-  }
-
-  /* ─── Borde inferior rasgado ────────────────────────────── */
-  .torn-edge--bottom {
-    height: 20px;
-    background: var(--pink-paper);
-    clip-path: polygon(
-      0% 0%, 1.5% 100%, 3% 20%, 5% 95%, 7% 10%, 9% 80%,
-      11% 5%, 13% 90%, 15% 0%, 17% 75%, 19% 15%, 21% 100%,
-      23% 5%, 25% 85%, 27% 0%, 29% 70%, 31% 20%, 33% 100%,
-      35% 10%, 37% 85%, 39% 0%, 41% 80%, 43% 25%, 45% 100%,
-      47% 5%, 49% 90%, 51% 0%, 53% 75%, 55% 20%, 57% 95%,
-      59% 10%, 61% 80%, 63% 0%, 65% 88%, 67% 15%, 69% 95%,
-      71% 0%, 73% 78%, 75% 12%, 77% 92%, 79% 0%, 81% 85%,
-      83% 20%, 85% 100%, 87% 8%, 89% 82%, 91% 0%, 93% 90%,
-      95% 18%, 97% 78%, 100% 0%, 100% 0%, 0% 0%
-    );
-    margin-top: 1rem;
-    filter: drop-shadow(0 4px 4px rgba(0,0,0,0.12));
-  }
-
-  /* ─── Responsive ────────────────────────────────────────── */
   @media (max-width: 640px) {
-    .diary-page { transform: rotate(-0.6deg); }
-    .diary-body { padding: 1rem 1.5rem 1.5rem 3rem; }
-    .diary-header { padding: 1.5rem 1.5rem 0.5rem 3rem; }
-    .diary-rule   { margin-left: 3rem; }
-    .margin-note  { display: none; }
-    .sticker      { font-size: 1.3rem; }
-    .tape         { width: 50px; height: 20px; }
-    .diary-entry  { font-size: 0.82rem; line-height: 2; }
+    .diary-page    { transform: rotate(-0.6deg); }
+    .diary-body    { padding: 1rem 1.5rem 1.5rem 3rem; }
+    .diary-header  { padding: 1.5rem 1.5rem 0.5rem 3rem; }
+    .diary-rule    { margin-left: 3rem; }
+    .margin-note   { display: none; }
+    .sticker       { font-size: 1.3rem; }
+    .tape          { width: 50px; height: 20px; }
+    .diary-entry   { font-size: 0.82rem; line-height: 2; }
   }
 
-  /* ─── Keyframes ─────────────────────────────────────────── */
-  @keyframes sticker-float {
-    0%,100% { transform: translateY(0px) rotate(0deg);   }
-    33%     { transform: translateY(-6px) rotate(3deg);  }
-    66%     { transform: translateY(3px) rotate(-2deg);  }
-  }
-
-  @keyframes horror-blink {
-    0%,92%,100% { opacity: 1;   }
-    95%         { opacity: 0.2; }
-    97%         { opacity: 1;   }
-    98%         { opacity: 0.1; }
-  }
-
-  @keyframes horror-shake {
-    0%,90%,100%  { transform: translate(0); }
-    92% { transform: translate(-1px, 1px);  }
-    94% { transform: translate(1px, -1px);  }
-    96% { transform: translate(-1px, 0);    }
-    98% { transform: translate(1px, 1px);   }
-  }
-
-  @keyframes glitch-idle {
-    0%,88%,100% { transform: translate(0); }
-    90% { transform: translate(-2px, 1px); filter: hue-rotate(80deg); }
-    92% { transform: translate(2px, -1px); }
-    94% { transform: translate(0); }
-    96% { transform: translate(-1px, 1px); filter: hue-rotate(-40deg); }
-    98% { transform: translate(0); }
-  }
-
-  @keyframes glitch-top {
-    0%,87%,100% { opacity: 0; transform: translate(0); }
-    88% { opacity: 0.85; transform: translate(-3px,-1px); }
-    90% { opacity: 0.85; transform: translate(3px, 1px); }
-    92% { opacity: 0; }
-  }
-
-  @keyframes glitch-bottom {
-    0%,89%,100% { opacity: 0; transform: translate(0); }
-    90% { opacity: 0.85; transform: translate(3px, 2px); }
-    92% { opacity: 0.85; transform: translate(-3px,-1px); }
-    94% { opacity: 0; }
-  }
+  @keyframes sticker-float { 0%,100% { transform: translateY(0px) rotate(0deg); } 33% { transform: translateY(-6px) rotate(3deg); } 66% { transform: translateY(3px) rotate(-2deg); } }
+  @keyframes horror-blink  { 0%,92%,100% { opacity: 1; } 95% { opacity: 0.2; } 97% { opacity: 1; } 98% { opacity: 0.1; } }
+  @keyframes glitch-idle   { 0%,88%,100% { transform: translate(0); } 90% { transform: translate(-2px,1px); filter: hue-rotate(80deg); } 92% { transform: translate(2px,-1px); } 94% { transform: translate(0); } 96% { transform: translate(-1px,1px); filter: hue-rotate(-40deg); } 98% { transform: translate(0); } }
+  @keyframes glitch-top    { 0%,87%,100% { opacity: 0; transform: translate(0); } 88% { opacity: 0.85; transform: translate(-3px,-1px); } 90% { opacity: 0.85; transform: translate(3px,1px); } 92% { opacity: 0; } }
+  @keyframes glitch-bottom { 0%,89%,100% { opacity: 0; transform: translate(0); } 90% { opacity: 0.85; transform: translate(3px,2px); } 92% { opacity: 0.85; transform: translate(-3px,-1px); } 94% { opacity: 0; } }
 </style>
-</html>
